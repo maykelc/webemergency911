@@ -1,0 +1,57 @@
+/* Estilos generales de la página de Historia, Misión y Visión */
+.history-mission-vision-section {
+    padding: 20px;
+  }
+  
+  .history-mission-vision-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .history-card,
+  .mission-vision-container {
+    flex: 1;
+  }
+  
+  /* Estilos generales de las tarjetas */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .card-body {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  /* Estilos específicos para cada tarjeta */
+  .history-card {
+    background-color: #f0f0f0; /* Fondo gris claro */
+  }
+  
+  .mission-card {
+    background-color: #e6eaff; /* Fondo azul claro */
+    margin-bottom: 40px; /* Margen inferior entre Misión y Visión */
+  }
+  
+  .vision-card {
+    background-color: #ffcccc; /* Fondo amarillo claro */
+  }
+  
+  /* Estilos para títulos */
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .card-body h2 {
+    color: #333; /* Color de texto oscuro */
+  }
+  
+  .card-body p {
+    color: #666; /* Color de texto gris oscuro */
+  }
+  

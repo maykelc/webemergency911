@@ -1,0 +1,376 @@
+/* Estilos generales */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* Fin Estilos generales */
+
+/* Estilos del header */
+.header {
+  background-color: #000000;
+  color: white;
+  padding: 30px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header .logo {
+  height: 50px;
+}
+
+.header .nav {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 1000; /* Asegura que esté por encima del carrusel */
+}
+
+.header .nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1000;
+}
+
+.header .nav a:hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  z-index: 1000;
+}
+
+.header .header-left,
+.header .header-center,
+.header .header-right {
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header .search-input {
+  padding: 8px;
+  border: 1px solid #180d0d;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 200px;
+  z-index: 1000; /* Asegura que esté por encima del carrusel */
+}
+
+.header .search-button {
+  padding: 8px 12px;
+  background-color: #173218;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 1000; /* Asegura que esté por encima del carrusel */
+}
+
+.header .search-button:hover {
+  background-color: #9a0007;
+}
+
+/* Estilos del menú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #800a0a;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.dropdown-menu ul li a {
+  color: black; /* Cambia el color de texto para hacerlo visible */
+  text-decoration: none;
+  display: block;
+  z-index: 1000;
+}
+
+.dropdown-menu ul li a:hover {
+  background-color: #a70404;
+}
+/* Fin Estilos del menú desplegable */
+
+/* Mostrar el menú desplegable al pasar el mouse por encima */
+.nav a:hover + .dropdown-menu,
+.dropdown-menu:hover {
+  display: block;
+}
+/* Fin Mostrar el menú desplegable al pasar el mouse por encima */
+
+/* inicio de reorganizar elementos en dispositivos */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* fin de reorganizar elementos en dispositivos */
+
+/* inicio de cambiar tamaño del logo en dispositivos pequeños */
+@media (max-width: 768px) {
+  .header .logo {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo {
+    height: 30px;
+  }
+}
+/* fin de cambiar tamaño del logo en dispositivos pequeños */
+
+/* inicio de reorganización del input de búsqueda y el botón de búsqueda en dispositivos pequeños */
+@media (max-width: 768px) {
+  .header .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .header .search-button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .search-input,
+  .header .search-button {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .header .search-button {
+    margin-bottom: 0;
+  }
+}
+/* fin de reorganización del input de búsqueda y el botón de búsqueda en dispositivos pequeños */
+
+/* inicio de ajustes en el menú desplegable para dispositivos pequeños */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    position: static; /* Cambiar la posición para dispositivos pequeños */
+    min-width: 100%; /* Hacer que ocupe el ancho completo */
+    box-shadow: none; /* Quitar sombra */
+  }
+
+  .dropdown-menu ul {
+    padding: 0;
+  }
+
+  .dropdown-menu ul li {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-menu {
+    position: static; /* Cambiar la posición para dispositivos pequeños */
+    min-width: 100%; /* Hacer que ocupe el ancho completo */
+    box-shadow: none; /* Quitar sombra */
+  }
+
+  .dropdown-menu ul {
+    padding: 0;
+  }
+
+  .dropdown-menu ul li {
+    padding: 10px 20px;
+  }
+}
+/* fin de ajustes en el menú desplegable para dispositivos pequeños */
+
+/* inicio de ajuste del tamaño del ícono de usuario en dispositivos pequeños */
+.header .login-icon {
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .header .login-icon {
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .login-icon {
+    height: 20px;
+  }
+}
+/* fin de ajuste del tamaño del ícono de usuario en dispositivos pequeños */
+
+/* inicio de mover la imagen del usuario arriba en dispositivos pequeños */
+@media (max-width: 768px) {
+  .header .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header .header-right a {
+    margin-bottom: 10px;
+  }
+
+  .header .login-icon {
+    margin-bottom: 15px; /* Añadir espacio debajo de la imagen del usuario */
+  }
+}
+
+@media (max-width: 480px) {
+  .header .login-icon {
+    margin-top: 10px; /* Incrementar espacio debajo de la imagen del usuario */
+    margin-left: 140px;
+  }
+}
+/* fin de mover la imagen del usuario arriba en dispositivos pequeños */
+
+/* fin de estilos del header */
+
+/* Estilos del footer */
+.footer {
+  background-color: #000000;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer .footer-column {
+  flex: 1;
+  padding: 0 10px;
+  min-width: 200px; /* Ajustar según el diseño */
+}
+
+.footer .footer-logo {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer-nav {
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  display: block; /* Cambiar a bloque para la columna */
+  margin-bottom: 5px;
+}
+
+.footer-nav a {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.social-icons .x-logo {
+  border: 2px solid white; /* Borde blanco alrededor del logo de X */
+}
+
+.social-icons a img {
+  opacity: 0.7;
+}
+
+/* Fin Estilos del footer */
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header .nav {
+    margin-left: 0;
+  }
+
+  .header .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .header .search-button {
+    margin-left: 0;
+  }
+}

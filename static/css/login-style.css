@@ -1,0 +1,100 @@
+/* Estilos generales */
+.combined-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-image: url('../img/bomberos-chile-inc.jpg'); /* Ruta relativa a la carpeta CSS */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  flex-direction: row; /* Diseño en fila para pantallas grandes */
+}
+
+.card-container {
+  flex: 1;
+  max-width: 400px;
+  position: relative; /* Añadir posición relativa para controlar z-index */
+  z-index: 2; /* Añadir z-index para estar por encima del header */
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.518);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  position: relative; /* Añadir posición relativa */
+  z-index: 1; /* Añadir z-index para estar debajo del footer */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.form-group label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #1e6821;
+}
+
+.register-link {
+  margin-top: 10px;
+}
+
+.register-link p {
+  margin-bottom: 5px;
+}
+
+.register-link a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Media query para pantallas de 768px y menos */
+@media (max-width: 768px) {
+  .combined-container {
+    flex-direction: column; /* Diseño en columna para pantallas pequeñas */
+    justify-content: center;
+    align-items: center; /* Asegura que los contenedores estén centrados */
+  }
+
+  .card-container {
+    max-width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+    margin-bottom: 20px; /* Espacio entre los formularios */
+    margin-top: 20px; /* Margen arriba de los formularios */
+    z-index: 2; /* Ajuste de z-index */
+  }
+
+  .form-container {
+    padding: 20px; /* Ajustar el padding para pantallas pequeñas */
+    z-index: 1; /* Ajuste de z-index */
+  }
+}

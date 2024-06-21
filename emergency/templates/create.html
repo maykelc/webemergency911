@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="main-container">
+  <div class="card form-container">
+    <form action="{% url 'crear' %}" method="POST" class="alert-form" id="alertForm" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h2>Crear nueva alerta</h2>
+      {{ form.as_p }}
+      <button type="submit">Crear Alerta</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/create-style.css' %}">
+{% endblock %}

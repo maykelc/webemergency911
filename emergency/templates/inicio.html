@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!-- Main content goes here -->
+<!-- Banner Principal -->
+<section class="banner">
+    <div class="container">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="{% static 'img/bombero-en-Chile-slider.jpg' %}" alt="Banner 1" data-sr="wait 0.2s" />
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/bomberos-slider.jpg' %}" alt="Banner 2" data-sr="wait 0.4s" />
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/bomberos-chile-inc.jpg' %}" alt="Banner 3" data-sr="wait 0.6s" />
+                </div>
+                <div class="slide">
+                    <img src="{% static 'img/bomberos-eru.jpg' %}" alt="Banner 4" data-sr="wait 0.8s" />
+                </div>
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- Botones de Emergencias y Alerta Roja -->
+{% if usuario_autenticado %}
+<section class="home-buttons">
+    <div class="container">
+        <div class="button">
+            <a href="#" class="button-emergencias">Emergencias</a>
+        </div>
+        <div class="button">
+            <a href="{% url 'crear' %}" class="button-alerta-roja">Alerta Roja</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Post Slider de Noticias -->
+<section class="post-slider">
+    <div class="container">
+        <div class="slider-news-card-wrapper">
+            <div class="slider-news">
+                <h2>Últimas Noticias</h2>
+                <div class="slider">
+                    <div class="slides">
+                        {% for alerta in alertas %}
+                        <div class="slide">
+                            <div class="news-card">
+                                <div class="news-image">
+                                    <img src="{% static 'imagenes_alertas/' %}{{ alerta.imagen }}" alt="{{ alerta.titulo }}">
+                                </div>
+                                <div class="news-content">
+                                    <h3>{{ alerta.titulo }}</h3>
+                                    <p>{{ alerta.descripcion }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="prev-news">&#10094;</button>
+                    <button class="next-news">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="card-section">
+                <div class="card-grid">
+                    <div class="card">
+                        <a href="{% url 'sismos' %}">
+                            <h3>Sismos</h3>
+                            <p>Contenido de la card 1.</p>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="{% url 'emergencia_noticia' %}">
+
+                            <h3>Emergencias</h3>
+                            
+                            <p>Contenido de la card 2.</p>
+                        </a>
+                    </div>
+                    <div class="card">
+                        
+                        <a href="{% url 'clima' %}">
+                            <h3>Clima</h3>
+                            <p>Contenido de la card 3.</p>
+                        </a>
+                        
+                    </div>
+                    <div class="card">
+                        
+                        <a href="{% url 'emergencia_noticia' %}">
+                            <h3>Noticias</h3>
+                            <p>Contenido de la card 4.</p>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HTML Central Online -->
+<section class="central-online">
+    <div class="container">
+        <h2>Central Online</h2>
+        <div class="content">
+            <iframe width="100%" height="100" scrolling="no" frameborder="no"
+                src="https://api.broadcastify.com/embed/player/?key=24c25331-06a3-11ef-a7d7-0e676e2c8629&amp;feedId=36528&amp;html5=1&amp;stats=1&amp;as=1&amp;bg=000000&amp;fg=FFFFFF">
+            </iframe>
+        </div>
+    </div>
+    
+</section>
+
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    // Configuración de ScrollReveal
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.card', {
+            origin: 'right',
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            reset: true,
+            interval: 200
+        });
+
+        ScrollReveal().reveal('.slider', {
+            origin: 'left',
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            reset: true,
+            interval: 200
+        });
+
+
+        ScrollReveal().reveal('.button-emergencias', {
+            origin: 'bottom',
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            reset: true
+        });
+
+        ScrollReveal().reveal('.button-alerta-roja', {
+            origin: 'top',
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            reset: true,
+            interval: 200
+        });
+    });
+
+
+    $(document).ready(function(){
+        $('.slides').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: $('.prev-news'),
+            nextArrow: $('.next-news'),
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>
+{% endblock %}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/inicio-style.css' %}" />
+{% endblock %}
+

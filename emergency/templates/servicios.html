@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="defondo-abajo">
+  <div class="container">
+    <div class="arriba">
+      <div class="titulos">
+        <h1 class="titulo">Servicios</h1>
+        <p>Respondedores de Emergencias</p>
+      </div>
+    </div>
+
+    <div class="abajo">
+      <div class="imgabajo">
+        <h3>¿Por qué somos del área de emergencias?</h3>
+        <h4>Emergency 911 Alerta</h4>
+        <p>
+          Somos un medio de Emergencias y alertas que nos enfocamos en el
+          servicio a la comunidad, llevando la información a cada rincón de
+          nuestro país.
+        </p>
+        <div class="cajas">
+          <div class="cajalogo">
+            <img src="{% static 'img/muchos.png' %}" alt="" />
+          </div>
+          <div class="cajatex">
+            <h5>Enfoque centrado en la comunidad</h5>
+            <p>
+              Nuestro equipo de trabajo se enfoca en la recopilación de
+              información ante los sucesos.
+            </p>
+          </div>
+        </div>
+        <div class="cajas">
+          <div class="cajalogo">
+            <img src="{% static 'img/integral.png' %}" alt="" />
+          </div>
+          <div class="cajatex">
+            <h5>Gestión Integral de Incidentes</h5>
+            <p>
+              Realizamos las gestiones entre nuestros equipos de emergencias
+              para tener mayor cobertura.
+            </p>
+          </div>
+        </div>
+        <div class="cajas">
+          <div class="cajalogo">
+            <img src="{% static 'img/carpeta.png' %}" alt="" />
+          </div>
+          <div class="cajatex mission-card">
+            <h5>Hablemos de prevención</h5>
+            <p>
+              Cuando hablamos de prevención nos referimos a la seguridad y
+              preparación de la ciudadanía.
+            </p>
+          </div>
+        </div>
+        <div class="cajas">
+          <div class="cajalogo">
+            <img src="{% static 'img/alerta.png' %}" alt="" />
+          </div>
+          <div class="cajatex">
+            <h5>Reporte de Emergencias</h5>
+            <p>
+              Informamos en tiempo real despachos de Emergencias y Desastres que
+              ocurren.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    // Configuración de ScrollReveal
+    ScrollReveal().reveal('.cajalogo', {
+      origin: 'left',
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true
+    });
+  
+    ScrollReveal().reveal('.cajatex', {
+      origin: 'right',
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true,
+      interval: 200
+    });
+
+    ScrollReveal().reveal('.vision-card', {
+      origin: 'right',
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true,
+      interval: 200
+    });
+</script>
+{% endblock %}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/servicios-style.css' %}" />
+{% endblock %}

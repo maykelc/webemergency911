@@ -1,0 +1,103 @@
+.defondo-abajo {
+  background-image: url("../img/bomberos-chile-inc.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.arriba {
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Estilos para centrar los títulos */
+.arriba .titulos {
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centra el contenido */
+}
+
+.arriba .titulo {
+  margin-bottom: 10px;
+}
+
+.arriba p {
+  margin-bottom: 20px;
+}
+
+.abajo {
+  padding: 20px 0;
+}
+
+.abajo .imgabajo {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cajas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cajalogo {
+  flex: 0 0 80px; /* Ajusta el tamaño del logo aquí */
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.cajalogo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.cajatex {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .cajas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cajalogo {
+    margin: 0 auto 10px;
+  }
+}
+
+/*LOGO EN CEL*/
+@media (max-width: 768px) {
+    .cajas {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .cajalogo {
+      margin: 0 auto 10px;
+      width: 60px; /* Ajusta el ancho del logo */
+      height: 60px; /* Ajusta la altura del logo para mantener la proporción cuadrada */
+      border-radius: 50%; /* Asegurar que el contenedor sea circular */
+      overflow: hidden; /* Ocultar cualquier desbordamiento para mantener la forma circular */
+    }
+  
+    .cajalogo img {
+      width: 100%; /* Ajusta el ancho del logo al contenedor */
+      height: 100%; /* Ajusta la altura del logo al contenedor */
+      border-radius: 50%; /* Asegurar que la imagen sea circular */
+    }
+  }
+  

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency 911</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base-style.css' %}" />
+    {% block additional_css %}{% endblock %}
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-left">
+          <a href="{% url 'inicio' %}"><img src="{% static 'img/Logo.png' %}" alt="Logo" class="logo" /></a>
+          
+        </div>
+        <div class="header-center">
+          <nav class="nav">
+            <a href="#" class="dropdown-toggle">Inicio</a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="{% url 'servicio' %}">Servicios</a></li>
+                <li><a href="{% url 'nosotros' %}">Historia</a></li>
+                <li><a href="{% url 'nosotros' %}">Mision</a></li>
+                <li><a href="{% url 'nosotros' %}">Vision</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+              </ul>
+            </div>
+            <a href="#" class="dropdown-toggle">Reporte</a>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="{% url 'sismos' %}">Sismologia</a></li>
+                <li><a href="{% url 'clima' %}">Clima</a></li>
+                <li><a href="{% url 'emergencia_noticia' %}">Noticias</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="header-right">
+          <input type="text" placeholder="Buscar..." class="search-input" />
+          <button class="search-button">Buscar</button>
+          <div>
+            <a href="{% url 'login' %}">
+              <img src="{% static 'img/user-logo.png' %}" alt="Login" class="login-icon" />
+            </a>
+          </div>
+          <div class="logoutt">
+            {% if usuario_autenticado %}
+                <a href="{% url 'logout' %}" class="btn btn-primary">Cerrar Sesión</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-column">
+          <nav class="footer-nav">
+            <a href="{% url 'nosotros' %}">Nosotros</a>
+            <a href="{% url 'servicio' %}">Servicio</a>
+            <a href="{% url 'contacto' %}">Contáctanos</a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <a href="{% url 'inicio' %}">
+            <img
+            src="{% static 'img/Logo.png' %}"
+            alt="Logo"
+            class="footer-logo"
+          />
+          </a>
+          
+          <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Redes Sociales</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"
+              ><img src="{% static 'img/face-logo-negro.png' %}" alt="Facebook"
+            /></a>
+            <a href="https://www.instagram.com/"
+              ><img
+                src="{% static 'img/insta-negro-logo.png' %}"
+                alt="Instagram"
+            /></a>
+            <a href="https://x.com/"
+              ><img src="{% static 'img/xlogo.jpg' %}" alt="x" class="x-logo"
+            /></a>
+            <a href="https://youtube.com/"
+              ><img src="{% static 'img/youtube-black.png' %}" alt="YouTube"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/base.js' %}"></script>
+  </body>
+</html>

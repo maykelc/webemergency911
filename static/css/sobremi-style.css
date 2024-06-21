@@ -1,0 +1,34 @@
+/* Estilos generales de las tarjetas */
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.history-card {
+  max-width: 600px;
+}
+
+.mission-card,
+.vision-card {
+  max-width: 300px;
+}
+
+.mission-card h2,
+.vision-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.mission-card p,
+.vision-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
